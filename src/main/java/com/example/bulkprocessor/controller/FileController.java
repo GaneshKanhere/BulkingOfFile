@@ -22,7 +22,7 @@ import java.util.List;
 public class FileController {
     @PostMapping(value = "/combine", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<?>combineFiles(@RequestParam("files")List<MultipartFile>files){
-        String outputFilePath="C:\\Users\\10820119\\OneDrive - LTIMindtree\\Desktop\\combined_file.txt";
+        String outputFilePath="combined_file.txt";
         try(BufferedWriter writer=new BufferedWriter(new FileWriter(outputFilePath))){
             for (MultipartFile file:files){
                 BufferedReader reader =new BufferedReader(new InputStreamReader(file.getInputStream()));
